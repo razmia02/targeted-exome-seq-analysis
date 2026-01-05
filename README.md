@@ -38,7 +38,7 @@ Identify clinically relevant germline variants in cancer predisposition genes fr
 **Note**: Only selected result files and read samples are included in this repo due to the large size of other data files.
 
 ## Results
-Some clinically significant variants observed within the samples include **missense variants** at *MLH1* (rs2020873 [CHR3:37092025, C>T]), *BRCA1* (rs1799966 [CHR17: 41223094, T>C], rs16942 [CHR17: 41244000, T>C], rs16941 [CHR17: 41244435, T>C]) and *BRCA2* (rs144848 [CHR13: 32906729, A>C], rs169547 [CHR13: 32929387, T>C]) and **synonymous variants at coding regions** of *BRCA2* (rs543304, [CHR13: 32912299, T>C], rs206076 [CHR13: 32915005, G>C]). 
+Some variants observed within the samples include **missense variants** at *MLH1* (rs2020873 [CHR3:37092025, C>T]), *BRCA1* (rs1799966 [CHR17: 41223094, T>C], rs16942 [CHR17: 41244000, T>C], rs16941 [CHR17: 41244435, T>C]) and *BRCA2* (rs144848 [CHR13: 32906729, A>C], rs169547 [CHR13: 32929387, T>C]) and **synonymous variants at coding regions** of *BRCA2* (rs543304, [CHR13: 32912299, T>C], rs206076 [CHR13: 32915005, G>C]). ClinVar shows that all these variants are benign or of uncertain significance. Hence, no clinically actionaable pathogenic variants were identified. 
 
 ## Repository Structure
 
