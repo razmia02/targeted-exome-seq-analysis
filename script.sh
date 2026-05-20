@@ -24,30 +24,7 @@ final_results=~/tar_es_analysis/final_results
 
 ################################ Download the refrence genome ##################################
 
-
-#-----------------------------------------------------------------------------------------------------------------------------------
-
-############################################### HG19 Genome Files ####################################################################
-################## Downloading hg19 reference genome (Latest Version) ######################
-################## Alternatively, can use newer versions of the genome (hg38 or T2T consortium, available on UCSC) #################
-
-###################### If you want to download the reference from UCSC genome browser ###############################
-wget -P ${ref}/ https://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/latest/hg19.fa.gz ### download the ref file
-
-gunzip ${ref}/hg19.fa.gz ### unzip the fasta file
-
-
-########################### Need to index and make dictionary file #####################################
-samtools faidx ${ref}/hg19.fa
-gatk CreateSequenceDictionary R=$${ref}/hg19.fa O=${ref}/hg19.dict
-
-
-################## However, the UCSC HG19 genome does not have known sites in GATK Resource bundle #####################
-
-#-----------------------------------------------------------------------------------------------------------------------------------
-
-
-################ Hence downloading b37 (HG19) genome from GATK resource bundle ########################
+#---------------------------------------------------------------------------------------------------------------------------
 
 #################################### b37 (HG19) Genome Files from GATK Resources ############################
 ################### Download the reference sequence file ########################
@@ -64,13 +41,6 @@ samtools faidx ${ref}/b37/human_g1k_v37.fasta ### index
 gatk CreateSequenceDictionary R=${ref}/b37/human_g1k_v37.fasta O=${ref}/b37/human_g1k_v37.dict ### create seq dict
 
 
-################## Alternatively can download the index and dictionary files from resource bundle #######################
-
-wget -P ${ref}/b37 https://console.cloud.google.com/storage/browser/_details/broad-references/hg19/v0/Homo_sapiens_assembly19.fasta.fai
-
-wget -P ${ref}/b37 https://console.cloud.google.com/storage/browser/_details/broad-references/hg19/v0/Homo_sapiens_assembly19.dict
-
-
 ############################# Download known sites for BQSR from GATK Resource bundle ################################
 
 wget -P ${ref}/b37 ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz
@@ -80,34 +50,6 @@ wget -P ${ref}/b37 ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/M
 gunzip ${ref}/b37/dbsnp_138.b37.vcf.gz
 
 gunzip ${ref}/b37/Mills_and_1000G_gold_standard.indels.b37.vcf.gz
-
-
-#-------------------------------------------------------------------------------------------------------------------------------------
-
-
-########################################## HG38 Genome Files ##########################################################
-######################### Download and unzip hg38 genome files ####################################
-
-wget -P ${ref} https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
-
-gunzip ${ref}/hg38.fa.gz
-
-
-########################### Index reference file  ###########################
-
-samtools faidx ${ref}/hg38.fa
-
-######################## Create sequence dictionary ###########################
-
-gatk CreateSequenceDictionary R=${ref}/hg38.fa O=${ref}/hg38.dict
-
-
-########################### Download known sites files for BQSR from GATK resource bundle ################################
-
-wget -P ${ref} https://storage.googleapis.com/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.dbsnp138.vcf
-
-wget -P ${ref} https://storage.googleapis.com/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.dbsnp138.vcf.idx
-
 
 
 #--------------------------------------------------------------------------------------------------------------------------------------
