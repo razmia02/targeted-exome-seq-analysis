@@ -9,14 +9,15 @@
 mkdir reads ref_files aligned_reads bed_files results #### make the required directories
 
 ########################### Defining variables for directory paths ########################################## 
-ref=~/tar_es_analysis/ref_files/b37/human_g1k_v37.fasta 
-known_sites_snps=~/tar_es_analysis/ref_files/b37/dbsnp_138.b37.vcf
-known_sites_indels=~/tar_es_analysis/ref_files/b37/Mills_and_1000G_gold_standard.indels.b37.vcf
-aligned_reads=~/tar_es_analysis/aligned_reads
-reads=~/tar_es_analysis/reads
-results=~/tar_es_analysis/results
-bed_files=~/tar_es_analysis/bed_files
-final_results=~/tar_es_analysis/final_results
+ref="./ref_files/b37/human_g1k_v37.fasta"
+known_sites_snps="./ref_files/b37/dbsnp_138.b37.vcf"
+known_sites_indels="./ref_files/b37/Mills_and_1000G_gold_standard.indels.b37.vcf"
+
+aligned_reads="./aligned_reads"
+reads="./reads"
+results="./results"
+bed_files="./bed_files"
+final_results="./final_results"
 
 #----------------------------------------------------------------------------------------------------------------------------------------
 
